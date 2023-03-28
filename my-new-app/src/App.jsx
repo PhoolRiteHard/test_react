@@ -1,24 +1,17 @@
-import './App.css'
-import PokemonCard from './components/PokemonCard'
+function PokemonCard(props) {
+  let pokemon = props.pokemon;
 
-let pokemonList = [
-  {
-    name: "bulbasaur",
-    imgSrc:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-  },
-  {
-    name: "mew",
-  },
-];
-
-function App() {
   return (
-    <div>
-      <PokemonCard pokemon={pokemonList[0]} />
-    </div>
+    <figure>
+      {pokemon.imgSrc ? (
+        <img src={pokemon.imgSrc} alt={pokemon.name} />
+      ) : (
+        <p>???</p>
+      )}
+      <figcaption>{pokemon.name}</figcaption>
+    </figure>
   );
 }
 
-export default App
+export default PokemonCard;
 
