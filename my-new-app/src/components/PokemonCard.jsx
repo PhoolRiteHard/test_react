@@ -1,12 +1,33 @@
 
+import React from "react";
+
+const pokemonList = [
+  {
+    name: "bulbasaur",
+    imgSrc:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+  },
+  {
+    name: "mew",
+  },
+];
+
 function PokemonCard() {
+  const [pokemonIndex, setPokemonIndex] = React.useState(0);
+  const pokemon = pokemonList[pokemonIndex];
+
   return (
-    <div>
-      <figure>
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="bulbasaur" />
-        <figcaption>bulbasaur</figcaption>
-      </figure>
-    </div>
+    <figure>
+      {pokemon.imgSrc ? (
+        <img src={pokemon.imgSrc} alt={pokemon.name} />
+      ) : (
+        <p>???</p>
+      )}
+      <figcaption>{pokemon.name}</figcaption>
+      <button onClick={() => setPokemonIndex((pokemonIndex + 1) % 2)}>
+        Next
+      </button>
+    </figure>
   );
 }
 
