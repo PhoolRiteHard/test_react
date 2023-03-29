@@ -1,15 +1,6 @@
-function PokemonCard (pokemon) {
-
-return pokemon.pokemon.imgSrc !== undefined ?
-<figure>
-  <img src={pokemon.pokemon.imgSrc} alt={pokemon.pokemon.name} />
-  <figcaption>{pokemon.pokemon.name}</figcaption>
-</figure>
-:
-<figure>
-  <p>???</p>
-  <figcaption>{pokemon.pokemon.name}</figcaption>
-</figure>
+function PokemonCard(props) {
+  return props.imgSrc ? (<figure><img src={props.imgSrc} alt="Bulbosaur"/><figcaption>{props.name}</figcaption>
+  </figure>) : <p>???<figcaption>{props.name}</figcaption></p>;
 }
 
 export default PokemonCard;
