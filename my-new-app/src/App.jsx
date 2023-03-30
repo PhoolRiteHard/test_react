@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import PokemonCard from './components/PokemonCard'
-import  style  from "./App.css";
+
 
 
 function App() {
@@ -18,7 +18,6 @@ function App() {
     },
   ]
   let pokemon = pokemonList[0];
-  console.log(pokemon);
   return(
     <>
       <PokemonCard data={pokemon}/>
