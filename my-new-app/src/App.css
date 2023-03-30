@@ -1,7 +1,7 @@
 .poke {
   width: px;
   padding: 1rem;
-  background-color: lightgreen;
+  background-color: rgb(226, 19, 19);
   border-radius: 5px;
   box-shadow: 0px 0px 5px gray;
   color: white;
@@ -15,5 +15,5 @@
   margin-bottom: 0.5rem;
   background-color: white;
   border-radius: inherit;
-  box-shadow: inherit;
+  box-shadow: 0px 2px 10px 0px rgb(19, 18, 18);
 }
