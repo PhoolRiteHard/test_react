@@ -1,4 +1,4 @@
- function navBar({pokemonIndex, setPokemonIndex, pokemonList}) {
+ function NavBar({pokemonIndex, setPokemonIndex, pokemonList}) {
 
   const handelClickNext = () => {
     if (pokemonIndex >= pokemonList.length - 1) {
@@ -25,4 +25,4 @@
   )
 }
 
-export default navBar
+export default NavBar
