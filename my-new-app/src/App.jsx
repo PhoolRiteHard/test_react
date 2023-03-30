@@ -38,10 +38,10 @@ function App() {
   useEffect(() => {
     alert("Hello Pokemon Trainer")
   }, []);
-  if (pokemon.name === "pikachu" ) {
-    alert("PikHATCHOUUUM (il a un rhume)")
-  }
 
+  if (pokemon.name === "pikachu" ) {
+    alert("PikaCHOUUUUUM (il a un rhume)")
+  }
   return (
     <>
       <NavBar
@@ -49,7 +49,7 @@ function App() {
         pokemonIndex={pokemonIndex}
         setPokemonIndex={setPokemonIndex}
       />
-
+      <PokemonCard data={pokemon} />
     </>
   );
 }

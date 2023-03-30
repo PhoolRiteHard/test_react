@@ -1,22 +1,28 @@
-import PokemonCard from "./PokemonCard"
-import { useState } from "react";
+function NavBar({pokemonIndex, setPokemonIndex, pokemonList}) {
 
- function NavBar({pokemonList}) {
+  const handelClickNext = () => {
+    if (pokemonIndex >= pokemonList.length - 1) {
+      alert("retourne à la page précédente");
+    } else {
+      setPokemonIndex(pokemonIndex + 1);
+    }
+  };
 
-  const [pokeToDisplay,setPokeToDisplay] = useState(pokemonList[0])
+  const handelClickPrevious = () => {
+    if (pokemonIndex <= 0) {
+      alert("passe à la page suivante");
+    } else {
+      setPokemonIndex(pokemonIndex - 1);
+    }
+  };
 
-  const handleClick = (pokemon) => {
-    setPokeToDisplay(pokemon)
-    
-  }
-  
-  return (
+
+  return(
     <div>
-      {pokemonList.map((pokemon) =>
-        <button key={pokemon.name} onClick= {()=> handleClick(pokemon)}>{pokemon.name}</button>
-      )}
-      {pokeToDisplay ? <PokemonCard data={pokeToDisplay}/> : 'pick a pokemon'}
+      <button onClick={handelClickNext}>Next</button> <br />
+      <button onClick={handelClickPrevious}>Previous</button>
     </div>
-)}
+  )
+}
 
 export default NavBar

@@ -5,19 +5,15 @@ function PokemonCard({data}) {
     return (
     <div>
       <figure className="poke">
-        <div className="img">
-        { data.imgSrc ? <img src={data.imgSrc}/>  : <p> ??? </p>}
-        </div>
-        <figcaption>bulbasaur</figcaption>
-
+        { data.imgSrc ? <img src={data.imgSrc}/> : <p> ??? </p>}
       </figure>
     </div>
   )
 }
-PokemonCard.propTypes = {
-  data: PropTypes.shape({
+PokemonCard.propsTypes = {
+  props: PropTypes.shape({
       name : PropTypes.string.isRequired,
-      imgSrc : PropTypes.string,
+      imgSrc : PropTypes.string.isRequired,
     }).isRequired,
 }
 
