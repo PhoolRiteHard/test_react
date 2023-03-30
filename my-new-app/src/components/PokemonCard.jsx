@@ -3,9 +3,13 @@ import PropTypes from "prop-types";
 function PokemonCard({data}) {
 
     return (
-    <div>
+      <div>
       <figure className="poke">
-        { data.imgSrc ? <img src={data.imgSrc}/> : <p> ??? </p>}
+        <div className="img">
+        { data.imgSrc ? <img src={data.imgSrc}/>  : <p> ??? </p>}
+        </div>
+        <figcaption>bulbasaur</figcaption>
+
       </figure>
     </div>
   )
