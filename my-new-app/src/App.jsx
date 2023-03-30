@@ -38,9 +38,8 @@ function App() {
   useEffect(() => {
     alert("Hello Pokemon Trainer")
   }, []);
-  
   if (pokemon.name === "pikachu" ) {
-    alert("PIKAKACHU")
+    alert("PikHATCHOUUUM (il a un rhume)")
   }
 
   return (
