@@ -1,4 +1,3 @@
-
 import PropTypes from "prop-types";
 
 function PokemonCard({data}) {
@@ -11,10 +10,10 @@ function PokemonCard({data}) {
     </div>
   )
 }
-PokemonCard.propsTypes = {
-  props: PropTypes.shape({
+PokemonCard.propTypes = {
+  data: PropTypes.shape({
       name : PropTypes.string.isRequired,
-      imgSrc : PropTypes.string.isRequired,
+      imgSrc : PropTypes.string,
     }).isRequired,
 }
 
