@@ -1,33 +1,24 @@
-import React from "react";
 
-const pokemonList = [
-  {
-    name: "bulbasaur",
-    imgSrc:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-  },
-  {
-    name: "mew",
-  },
-];
+import PropTypes from "prop-types";
 
-function PokemonCard() {
-  const [pokemonIndex, setPokemonIndex] = React.useState(0);
-  const pokemon = pokemonList[pokemonIndex];
+function PokemonCard({data}) {
 
-  return (
-    <figure>
-      {pokemon.imgSrc ? (
-        <img src={pokemon.imgSrc} alt={pokemon.name} />
-      ) : (
-        <p>???</p>
-      )}
-      <figcaption>{pokemon.name}</figcaption>
-      <button onClick={() => setPokemonIndex((pokemonIndex + 1) % 2)}>
-        Next
-      </button>
-    </figure>
-  );
+    return (
+    <div>
+      <figure className="poke">
+        { data.imgSrc ? <img src={data.imgSrc}/> : <p> ??? </p>}
+      </figure>
+    </div>
+  )
+}
+PokemonCard.propsTypes = {
+  props: PropTypes.shape({
+      name : PropTypes.string.isRequired,
+      imgSrc : PropTypes.string.isRequired,
+    }).isRequired,
 }
 
-export default PokemonCard;
+
+
+
+export default PokemonCard
